@@ -5,14 +5,13 @@ import seaborn as sns
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
 from sklearn import model_selection
+from sklearn.metrics import classification_report, accuracy_score
 from keras.utils import to_categorical
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import Adam
 from keras.layers import Dropout
 from keras import regularizers
-
-
 
 # read the csv
 df = pd.read_csv('C:/Users/aliek/Desktop/ANN_Paper_Project/heart.csv')
@@ -167,9 +166,6 @@ plt.xlabel('epoch')
 plt.legend(['train', 'test'])
 plt.show()
 
-# generate classification report using predictions for categorical model
-from sklearn.metrics import classification_report, accuracy_score
-
 categorical_pred = np.argmax(model_n.predict(X_test), axis=1)
 
 print('Results for Main Model')
@@ -214,9 +210,6 @@ plt.xlabel('epoch')
 plt.legend(['train', 'test'])
 plt.show()
 
-# generate classification report using predictions for categorical model
-from sklearn.metrics import classification_report, accuracy_score
-
 categorical_pred = np.argmax(model.predict(X_test_not_age), axis=1)
 
 print('Results for without Age Model')
@@ -243,9 +236,6 @@ plt.xlabel('epoch')
 plt.legend(['train', 'test'])
 plt.show()
 
-# generate classification report using predictions for categorical model
-from sklearn.metrics import classification_report, accuracy_score
-
 categorical_pred = np.argmax(model.predict(X_test_not_sex), axis=1)
 
 print('Results for without Gender Model')
@@ -271,9 +261,6 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'])
 plt.show()
-
-# generate classification report using predictions for categorical model
-from sklearn.metrics import classification_report, accuracy_score
 
 categorical_pred = np.argmax(model.predict(X_test_not_fbs), axis=1)
 
