@@ -32,9 +32,6 @@ df_categorical = df[f_categorical]
 # Set color palette
 sns.set_palette(['#5ffa64', '#fa7a7a'])
 
-import seaborn as sns
-import matplotlib.pyplot as plt
-
 # Set up subplots for each continuous feature
 fig, ax = plt.subplots(len(f_continuous), 2, figsize=(12, 3*len(f_continuous)))
 
